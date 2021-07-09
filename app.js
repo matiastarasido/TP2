@@ -9,6 +9,19 @@ app.get('/', (req,res) =>{
 
 app.use(express.static(path.join(__dirname, './public')));
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log("Servidor corriendo en el puerto 3000");
+
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/login.html'));
+  });
+app.get("/register", (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/register.html'));
+  });
+
+
+
+
+
+app.listen(process.env.PORT || 3001, function () {
+    console.log("Servidor corriendo en el puerto 3001");
 });
